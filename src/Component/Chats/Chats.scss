@@ -1,0 +1,52 @@
+/** @format */
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.userChat {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  cursor: pointer;
+  font-family: sans-serif, 'Arial Narrow';
+  @include tablet {
+    display: flex;
+    align-items: center;
+  }
+
+  &:hover {
+    background-color: #2f2d52;
+    transition: ease-in-out 1s;
+  }
+
+  img {
+    background-color: #ddddf7;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .userChatInfo {
+    span {
+      font-size: 18px;
+      font-weight: 500;
+      @include tablet {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      color: lightgray;
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+/** @format */
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  background-color: #2f2d52;
+  height: 50px;
+  padding: 10px;
+  justify-content: space-between;
+  color: #ddddf7;
+  font-family: sans-serif, 'Arial Narrow';
+
+  .logo {
+    font-weight: bold;
+    @include tablet {
+      display: none;
+    }
+  }
+  .user {
+    display: flex;
+    gap: 10px;
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    img {
+      background-color: #ddddf7;
+      height: 24px;
+      width: 24px;
+      border-radius: 50%;
+      object-fit: cover;
+      @include tablet {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    button {
+      background-color: #5d5b8d;
+      color: #ddddf7;
+      font-style: 10px;
+      border: none;
+      outline: none;
+      @include tablet {
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+      }
+
+      &:hover {
+        background-color: #2f2d52;
+        transition: ease-in-out 1s;
+        cursor: pointer;
+      }
+    }
+  }
+}

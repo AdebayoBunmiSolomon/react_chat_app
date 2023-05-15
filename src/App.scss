@@ -1,0 +1,41 @@
+/** @format */
+@mixin mobile {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+.app {
+  background-color: cornflowerblue;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  position: fixed;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .app-detail {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

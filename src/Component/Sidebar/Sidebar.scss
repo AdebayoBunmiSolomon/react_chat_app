@@ -1,0 +1,18 @@
+/** @format */
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #3e3c61;
+  font-family: sans-serif, 'Arial Narrow';
+  position: relative;
+  @include tablet {
+    width: 5px;
+    flex: 0.5;
+  }
+}
